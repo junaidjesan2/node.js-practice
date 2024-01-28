@@ -1,17 +1,11 @@
-const http=require("http")
+const express = require('express')
+const app = express()
+const port = 5000
 
-var server=http.createServer(function(req,res){
-    if(req.url=="/"){
-        res.writeHead(200,{'Content-type':'text/html'})
-        res.write('<h1>This is Home Page</h1>')
-        res.end()
-    }
-    if(req.url=="/contact"){
-        res.writeHead(200,{'Content-type':'text/html'})
-        res.write('<h1>This is Contact Page</h1>')
-        res.end()
-    }
+app.get('/', (req, res) => {
+  res.send('Hello World!')
 })
 
-server.listen(8000)
-console.log("Server");
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
