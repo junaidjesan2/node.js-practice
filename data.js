@@ -1,7 +1,4 @@
-const express = require("express");
-const app = express();
-const port = 5000;
-let data = [
+export let students = [
   {
     id: 1,
     name: "John Doe",
@@ -73,17 +70,3 @@ let data = [
     study_year: 3,
   },
 ];
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.get("/about", (req, res) => {
-  res.status(404).end("Page not found...");
-});
-app.get("/allStudents", (req, res) => {
-  res.send(data).status(200).end("Data Successfully get")
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
